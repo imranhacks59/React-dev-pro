@@ -1,0 +1,46 @@
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid gray;
+}
+.main-logo > img {
+    width: 100px;
+    height: 100px;
+}
+.nav-bars > ul{
+    display: flex;
+    margin-right: 30px;
+    font-size: 24px;
+}
+.nav-bars > ul > li{
+    padding: 10px;
+    margin: 10px;
+    list-style-type: none;
+}
+
+.res-card{
+  /* border: 2px solid gray; */
+  width: 200px;
+  padding: 5px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  /* background-color: "#f0f0f0"; */
+}
+.res-card:hover{
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.res-card >img{
+    width: 200px;
+
+}
+
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px;
+    margin: 5px;
+}
