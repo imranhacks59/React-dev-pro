@@ -22,6 +22,7 @@ import  ReactDOM  from "react-dom/client";
 import './index.css'
 import Header from "./src/components/Header/Header";
 import Body from "./src/components/Body";
+import Shimmer from "./src/components/Shimmer";
 // const Header=()=>{
 //   return(
 //     <div className="header-container">
@@ -49,6 +50,7 @@ return(
     <div className="main-container">
        <Header />
        <Body />
+       {/* <Shimmer /> */}
     </div>
 )
 }

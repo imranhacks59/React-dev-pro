@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {restaurantList} from '../utils/Mockdata'
 import RestaurentCard from "./RestaurentCard";
+import Shimmer from "./Shimmer";
 
 const Body=()=>{
     const [restaurants,setRestaurants]= useState([]);
@@ -38,14 +39,22 @@ const Body=()=>{
       setFilteredData(fData)
     }
     return(
-      <div className="body-container">
+      restaurants.length===0 ? <Shimmer /> : (
+        <div className="body-container">
         <div className="res-search" style={{marginTop:"20px"}}>
           <input type="text"
            placeholder="search restaurant near you"
            onChange={(e)=>setSearchtext(e.target.value)}
            />
            
-          <span onClick={resFilteredData}>Search</span>
+          <span style={{
+           backgroundColor:'blue',
+          //  height:'60px'
+          padding:3,
+          marginLeft:0,
+          cursor:'pointer'
+          }}
+           onClick={resFilteredData}>Search</span>
         </div>
   
         <div className="res-container">
@@ -58,6 +67,8 @@ const Body=()=>{
            }
         </div>
       </div>
+      )
+      
     )
   }
 
