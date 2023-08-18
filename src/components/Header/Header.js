@@ -1,6 +1,10 @@
 import React from "react"
+import { Link } from "react-router-dom"
+import useOnlineStatus from "../../utils/useOnlineStatus"
 
 const Header=()=>{
+
+  const onlineStatus = useOnlineStatus();
     return(
       <div className="header-container">
          <div className="main-logo">
@@ -8,8 +12,11 @@ const Header=()=>{
          </div>
          <div className="nav-bars">
            <ul>
-            <li>Home</li>
-            <li>About us</li>
+           <li> <Link to='/' style={{textDecoration:'none'}}>{onlineStatus?'online':'offline'}</Link></li>
+            <li> <Link to='/' style={{textDecoration:'none'}}>Home</Link></li>
+
+            <li ><Link to='/about' style={{textDecoration:'none'}}>About us</Link></li>
+            <li ><Link to='/grocery' style={{textDecoration:'none'}}>Grocery</Link></li> 
             <li>Contact us</li>
             <li>Cart</li>
            </ul>

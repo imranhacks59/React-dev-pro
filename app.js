@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import  ReactDOM  from "react-dom/client";
 
 /**
@@ -23,6 +23,11 @@ import './index.css'
 import Header from "./src/components/Header/Header";
 import Body from "./src/components/Body";
 import Shimmer from "./src/components/Shimmer";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import About from "./src/components/About";
+import Error from "./src/components/Error";
+import RestaurantMenu from "./src/components/RestaurantMenu";
+// import Grocery from "./src/components/Grocery/Grocery";
 // const Header=()=>{
 //   return(
 //     <div className="header-container">
@@ -43,17 +48,49 @@ import Shimmer from "./src/components/Shimmer";
 
 // RestaurantList is JSON Data for displaying cards
 
-
+const Grocery = lazy(()=>import('./src/components/Grocery/Grocery'))
 
 const App=()=>{
 return(
     <div className="main-container">
        <Header />
-       <Body />
+       <Outlet />
+       {/* <Body /> */}
        {/* <Shimmer /> */}
     </div>
 )
 }
+
+const AppRouter= createBrowserRouter([
+    {
+        path:'/',
+        element:<App />,
+        children:[
+            {
+                path:'/',
+                element:<Body />
+            },
+            {
+                path:'/about',
+                element:<About />
+            },
+            {
+                path:'/grocery',
+                element:(
+                    <Suspense fallback={<h1>Thoda wait krlo</h1>}>
+                  <Grocery />
+                    </Suspense>
+                ) 
+            },
+            {
+                path:'/restaurants/:resId',
+                element:<RestaurantMenu />
+            }
+
+        ],
+        errorElement:<Error />
+    }
+])
  
 const root =ReactDOM.createRoot(document.getElementById('root'))
-root.render(<App />)
+root.render(<RouterProvider router={AppRouter} />)
