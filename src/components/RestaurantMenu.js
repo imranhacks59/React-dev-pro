@@ -23,7 +23,10 @@ const RestaurantMenu = () => {
     );
 
   return (
-    <div style={{padding:'1vmax 5vmax'}}>
+    <div 
+    // style={{padding:'1vmax 5vmax'}}
+    className='text-center'
+    >
         {/* <h2>hello</h2>  */}
         <h2>{name}</h2>
         <p>{cuisines.join(',')}-{costForTwoMessage}</p>
