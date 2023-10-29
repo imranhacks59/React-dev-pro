@@ -49,7 +49,7 @@ const Body=()=>{
       setFilteredData(fData)
     }
     return(
-      restaurants.length===0 ? <Shimmer /> : (
+      restaurants?.length===0 ? <Shimmer /> : (
         <div className="body-container">
         <div className="flex m-4" style={{marginTop:"20px"}}>
           <input 

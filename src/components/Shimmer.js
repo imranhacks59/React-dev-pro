@@ -2,23 +2,8 @@ import React from "react";
 const Shimmer=()=>{
 
     return(
-        <div className="shimmerContainer">
-          <div className="shimmerCard"></div>
-          <div className="shimmerCard"></div>
-          <div className="shimmerCard"></div>
-          <div className="shimmerCard"></div>
-          <div className="shimmerCard"></div>
-          <div className="shimmerCard"></div>
-          <div className="shimmerCard"></div>
-          <div className="shimmerCard"></div>
-          <div className="shimmerCard"></div>
-          <div className="shimmerCard"></div>
-          <div className="shimmerCard"></div>
-          <div className="shimmerCard"></div>
-          <div className="shimmerCard"></div>
-          <div className="shimmerCard"></div>
-          <div className="shimmerCard"></div>
-          <div className="shimmerCard"></div>
+        <div className="">
+          <h2>hello</h2>
         </div>
     )
 }
