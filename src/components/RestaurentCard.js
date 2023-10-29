@@ -7,7 +7,7 @@ const RestaurentCard=({name,cloudinaryImageId,avgRating,cuisines,key})=>{
     return(
       <Fragment>
         {/* <Link to={`/restaurants/${key}`}> */}
-      <div className="res-card" style={{backgroundColor:"#f0f0f0"}}>
+      <div className="w-[250px]  m-4 p-4 rounded-md" style={{backgroundColor:"#f0f0f0"}}>
         <img src={
          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"+cloudinaryImageId 
         } />

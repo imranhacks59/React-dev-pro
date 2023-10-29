@@ -40,25 +40,22 @@ const Body=()=>{
       setFilteredData(fData)
     }
     return(
-      restaurants.length===0 ? <Shimmer /> : (
+      restaurants.length === 0 ? <Shimmer /> : (
         <div className="body-container">
-        <div className="res-search" style={{marginTop:"20px"}}>
-          <input type="text"
+        <div className="flex m-4" style={{marginTop:"20px"}}>
+          <input 
+          className="px-4 border border-solid border-black"
+          type="text"
            placeholder="search restaurant near you"
            onChange={(e)=>setSearchtext(e.target.value)}
            />
            
-          <span style={{
-           backgroundColor:'blue',
-          //  height:'60px'
-          padding:3,
-          marginLeft:0,
-          cursor:'pointer'
-          }}
+          <span 
+          className="bg-blue-300 mx-4 px-4 py-2 rounded-md cursor-pointer"
            onClick={resFilteredData}>Search</span>
         </div>
   
-        <div className="res-container">
+        <div className="flex flex-wrap">
            {
             filteredData.map((restaurant)=>(
               <Link
